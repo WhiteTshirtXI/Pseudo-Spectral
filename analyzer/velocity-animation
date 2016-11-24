@@ -1,0 +1,21 @@
+L=0.5
+filename="data.dat"
+
+l=0.01
+#l=0.2
+#set size square
+set size 0.85,1.05
+
+set lmargin at screen 0.05
+set rmargin at screen 0.75
+set bmargin at screen 0.05
+set tmargin at screen 1.1
+
+set xrange [-L:L]
+set yrange [-L:L]
+set palette rgb 0,3,21
+
+plot filename using 1:2:(l*($3)):(l*($4)):($5) with vectors lc palette notitle
+
+pause 0.1
+reread
